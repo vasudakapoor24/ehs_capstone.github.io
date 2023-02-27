@@ -1,13 +1,57 @@
 ---
 title: "Dashboard"
 output: 
-  html_document:
-    toc: true
-    toc_float: true
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
 ---
 
-```{r, echo = FALSE, message = FALSE}
+```{r, include = FALSE}
 library(tidyverse)
+library(flexdashboard)
+library(plotly)
+library(ggmap)
+```
+
+```{r, include = FALSE}
+# Load AQS data
+aqs_sites = read_csv("aqs_nyc_sites.csv") %>% janitor::clean_names() 
+```
+
+```{r, include = FALSE}
+# Create plot
+library(ggmap)
+register_google(key = "AIzaSyDl75KRtX9ikOuXQzbyx9GPyVl3QT3yMGg")
+nyc_base =  get_map(location = c(lon = -74.00, lat = 40.71), maptype = "terrain", zoom = 11)
+
+aqs_plot = ggmap(nyc_base) + geom_point(data = aqs_sites, aes(x = longitude, y = latitude), color = "red", size = 1, alpha = 0.5)
+
+aqs_plot = ggplotly(aqs_plot)
+```
+
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A
+
+```{r}
+aqs_plot
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r}
+
+```
+
+### Chart C
+
+```{r}
+
 ```
 
 # Data Sources
