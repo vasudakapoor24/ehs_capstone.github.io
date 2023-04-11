@@ -27,6 +27,8 @@ nyc_base =  get_map(location = c(lon = -74.00, lat = 40.71), maptype = "terrain"
 aqs_plot = ggmap(nyc_base) + geom_point(data = aqs_sites, aes(x = longitude, y = latitude), color = "red", size = 1, alpha = 0.5)
 
 aqs_plot = ggplotly(aqs_plot)
+
+view(aqs_nyc_sites)
 ```
 
 

@@ -44,7 +44,7 @@ In the stratosphere, ozone reduces exposure to UV radiation that causes skin can
 # Maps
 
 # Dashboard
-[Interact with the maps](dashboard.html)
+[Interact with the maps](https://vasudakapoor.shinyapps.io/EHS_capstone_project/)
 
 # Data Sources
 - [AirData](link.com)
