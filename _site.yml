@@ -4,10 +4,11 @@ navbar:
   title: "Home"
   right:
     - text: "Dashboard"
-      href: https://vasudakapoor.shinyapps.io/EHS_capstone_project/?_ga=2.72563734.443515295.1681216868-1911388278.1681071822
+      href: https://vasudakapoor.shinyapps.io/EHS_capstone_project/
     - icon: fa-github fa-lg
       href: http://github.com/<vasudakapoor24>/
 output: 
   html_document:
     toc: true
     theme: flatly
+    
